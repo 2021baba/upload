@@ -13,7 +13,7 @@ jobs:
     steps:
     # Step 1: 检出仓库代码
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # 更新为支持 Node.js 20 的版本
 
     # Step 2: 自动生成代码
     - name: Generate code
