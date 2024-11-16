@@ -2,7 +2,7 @@ name: Auto Generate and Push Code
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天凌晨运行
+    - cron: "0 * * * *"  # 每天凌晨运行
   push:
     branches:
       - main  # 当 main 分支有新代码时触发
