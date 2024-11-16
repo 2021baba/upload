@@ -11,9 +11,9 @@ jobs:
   generate_and_push:
     runs-on: ubuntu-latest
     steps:
-    # Step 1: 检出仓库代码
+    # Step 1: 检出代码仓库
     - name: Checkout repository
-      uses: actions/checkout@v4  # 更新为支持 Node.js 20 的版本
+      uses: actions/checkout@v4  # 确保使用支持 Node.js 20 的版本
 
     # Step 2: 自动生成代码
     - name: Generate code
@@ -21,10 +21,10 @@ jobs:
         echo "# This is an auto-generated Python script" > generated_code.py
         echo "def hello_world():" >> generated_code.py
         echo "    print('Hello, GitHub Actions!')" >> generated_code.py
-        echo "    print('Generated on $(date)')" >> generated_code.py  # 添加时间戳
+        echo "    print('Generated on $(date)')" >> generated_code.py
         echo "hello_world()" >> generated_code.py
 
-    # Step 3: 提交并推送代码
+    # Step 3: 检查并提交更改
     - name: Commit and Push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,8 +32,10 @@ jobs:
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "actions@github.com"
         git add .
+        # 检查是否有更改
         if ! git diff-index --quiet HEAD; then
           git commit -m "Auto-generated code - $(date)"
           git push
         else
           echo "No changes to commit."
+        fi
