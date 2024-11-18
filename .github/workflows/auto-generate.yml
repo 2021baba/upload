@@ -24,7 +24,7 @@ jobs:
         echo "    print('Generated on $(date)')" >> generated_code.py
         echo "hello_world()" >> generated_code.py
 
-    # Step 3: 强制拉取远程更改并提交推送
+    # Step 3: 强制拉取远程更改并提交推
     - name: Commit and Push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
