@@ -1,4 +1,4 @@
-# This is an auto-generated Python script
+# This is an auto-generated Python scrip
 def hello_world():
     print('Hello, GitHub Actions!')
     print('Generated on Sat Nov 16 12:24:51 UTC 2024')
