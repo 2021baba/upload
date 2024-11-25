@@ -1,4 +1,4 @@
-# This is an auto-generated Python sc
+# This is an auto-generated Python s
 
 def hello_world():
     print('Hello, GitHub Actions!')
