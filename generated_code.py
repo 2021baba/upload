@@ -1,4 +1,4 @@
-# This is an auto-generated Pyt
+# This is an auto-generated Py
 
 def hello_world():
     print('Hello, GitHub Actions!')
